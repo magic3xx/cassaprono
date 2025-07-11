@@ -1,7 +1,7 @@
 const gamesData = [
     { name: "Crash", url: "game/crash/crash.html", image: "game/crash/vision/image.jpg", category: "Crash" },
     { name: "Apple Of Fortune", url: "game/apple/applegame.html", image: "https://i.ibb.co/tPpXfchb/IMG-20250706-150700-297.jpg", category: "Crash" },
-    { name: "Thimble", url: "game/boll/Thimble.html", image: "https://i.ibb.co/7x72SV2h/IMG-20250706-150656-689.jpg", category: "Crash" },
+    { name: "Thimble", url: "game/boll/thimble.html", image: "https://i.ibb.co/7x72SV2h/IMG-20250706-150656-689.jpg", category: "Crash" },
     { name: "Mines Gems", url: "game/grile/mine.html", image: "https://i.ibb.co/TBBRzMnZ/IMG-20250706-150651-388.jpg", category: "Strategy" }
 ];
 
