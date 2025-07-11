@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title id="page-title">Thimble Cassa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.ibb.co/4nYXsKTz/Background-Eraser-20250504-230758425.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="notification" id="notification"></div>
+    <div class="overlay" id="overlay"></div>
+    <img src="https://i.ibb.co/392dYPC6/Background-Eraser-20250504-220257565.png" alt="Logo" class="logo">
+    <div class="table">
+        <div class="balls">
+            <div class="ball-container">
+                <img src="https://i.ibb.co/Rp6NvMHF/Background-Eraser-20250504-230906862.png" alt="Gobelet" class="ball-img" id="gobelet1">
+                <div class="ball-background"></div>
+            </div>
+            <div class="ball-container">
+                <img src="https://i.ibb.co/Rp6NvMHF/Background-Eraser-20250504-230906862.png" alt="Gobelet" class="ball-img" id="gobelet2">
+                <div class="ball-background"></div>
+            </div>
+            <div class="ball-container">
+                <img src="https://i.ibb.co/Rp6NvMHF/Background-Eraser-20250504-230906862.png" alt="Gobelet" class="ball-img" id="gobelet3">
+                <div class="ball-background"></div>
+            </div>
+        </div>
+        <div class="bet-options">
+            <button class="bet-btn bille1-btn" data-value="bille1" id="bille1-btn">1 bille x2.91</button>
+            <button class="bet-btn billes2-btn" data-value="billes2" id="billes2-btn">2 billes x1.45</button>
+        </div>
+    </div>
+    <div class="loader-container">
+        <div class="loader" id="loader"></div>
+    </div>
+    <div class="buttons">
+        <button id="predictBtn">PREDICTION</button>
+    </div>
+    <button class="back-button" id="backButton">
+        <svg width="16" height="16" fill="white" viewBox="0 0 24 24" style="margin-right: 8px;">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        <span id="back-button-text">Retour</span>
+    </button>
+    <script src="script.js"></script>
+</body>
+</html>

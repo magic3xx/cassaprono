@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Apple Cassa</title>
+  <link rel="shortcut icon" href="https://i.ibb.co/WcPgYg9/mobile-logo-c8044a089130.png" type="image/x-icon">
+  <link rel="stylesheet" href="stelo/apple.css">
+</head>
+<body>
+  <!-- Chargement initial -->
+  <div id="loading">
+    <div class="professional-loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Alerte -->
+  <div id="alertBox">Limite atteinte ! Cliquez sur Réinitialiser</div>
+
+  <!-- Chargement prédiction -->
+  <div id="prediction-loading" style="display: none;">
+    <div class="professional-loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div id="content">
+    <img src="https://i.ibb.co/WcPgYg9/mobile-logo-c8044a089130.png" alt="Logo" class="logo">
+    <div class="circle-container" id="circleContainer">
+      <div class="circle-row">
+        <div class="circle" id="circle1"></div>
+        <div class="circle" id="circle2"></div>
+        <div class="circle" id="circle3"></div>
+        <div class="circle" id="circle4"></div>
+        <div class="circle" id="circle5"></div>
+        <span class="row-number">1</span>
+      </div>
+    </div>
+
+    <!-- Boutons -->
+    <div class="buttons">
+      <button class="button" id="predictButton">
+        <svg class="button-icon" fill="white" viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-7h2v4h-2zm0-3h2v2h-2z"/></svg>
+        Prédictions
+      </button>
+      <button class="button" id="resetButton">
+        <svg class="button-icon" fill="white" viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 110 12 6 6 0 010-12h1z"/></svg>
+        Réinitialiser
+      </button>
+    </div>
+  </div>
+  <script src="apple.js"></script>
+</body>
+</html>
