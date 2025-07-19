@@ -2,101 +2,48 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cassa Predictor</title>
-    <link rel="shortcut icon" href="vision/image.png" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="vision/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Message d'erreur</title>
     <style>
-        .carousel-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 20px; /* Positionné à gauche */
-            color: white;
-            text-align: left; /* Alignement à gauche */
-            font-size: 16px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            opacity: 0; /* Caché par défaut */
-            transition: opacity 0.3s ease; /* Transition pour la visibilité */
-            white-space: nowrap; /* Texte sur une seule ligne */
-            max-width: calc(100% - 40px); /* Limite la largeur pour éviter le débordement */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            user-select: none;
         }
-        .carousel-caption.active {
-            opacity: 1; /* Visible quand actif */
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transform: perspective(1000px) rotateX(10deg);
+            transition: transform 0.3s ease;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        /* Désactiver le zoom */
+        html {
+            touch-action: manipulation;
         }
     </style>
 </head>
-<body class="dark-mode">
-    <div class="bg-animation"></div>
-
-    <!-- Top Navigation -->
-    <div class="top-nav">
-        <div class="profile-section">
-            <a class="profile-btn" id="profileBtn">
-                <i class="fas fa-user-circle"></i>
-            </a>
-            <div class="profile-info" id="profileInfo" style="display: none;">
-                <a class="profile-name" id="profileName"></a>
-                <span class="profile-id" id="profileId"></span>
-            </div>
-        </div>
-        <button class="hamburger-menu" id="hamburgerBtn">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-        </button>
+<body>
+    <div class="container">
+        <h1>Désolé, notre bot vient d'atteindre un niveau pour le moment.</h1>
     </div>
-
-    <!-- Carousel -->
-    <div class="carousel-container">
-        <div class="carousel" id="carousel">
-            <div class="carousel-image" style="background-image: url('https://picsum.photos/1200/300?random=1');">
-                <div class="carousel-caption" id="caption1"></div>
-            </div>
-            <div class="carousel-image" style="background-image: url('vision/Thimbles.jpg');">
-                <div class="carousel-caption" id="caption2"></div>
-            </div>
-            <div class="carousel-image" style="background-image: url('vision/cio.jpg');">
-                <div class="carousel-caption" id="caption3"></div>
-            </div>
-        </div>
-        <div class="carousel-dots" id="carouselDots">
-            <div class="carousel-dot active"></div>
-            <div class="carousel-dot"></div>
-            <div class="carousel-dot"></div>
-        </div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
-
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3 class="sidebar-title">Menu</h3>
-            <button class="close-sidebar" id="closeSidebar">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="#" id="modeToggle"><i class="fas fa-moon"></i> <span id="modeText">Mode Sombre</span></a></li>
-        </ul>
-    </div>
-
-    <main class="container">
-        <section>
-            <div class="games-grid" id="gamesGrid">
-                <!-- Games populated by JavaScript -->
-            </div>
-        </section>
-    </main>
-    <script src="game/script1.js"></script>
-    <script src="vision/scrip2.js"></script>
-    
 </body>
 </html>
