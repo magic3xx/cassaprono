@@ -58,7 +58,7 @@ class GemsMines {
             return;
         }
 
-        this.trapImage = "https://i.ibb.co/Swh0qp9/20250512-220505.jpg";
+        this.trapImage = "https://i.ibb.co/nqMShQQL/20250512-220505.jpg";
         this.initializeElements();
         this.count = 2;
         this.isPredicting = false;
@@ -72,7 +72,7 @@ class GemsMines {
         this.updateDisplay();
         this.handlePreloader();
     }
-
+    
     getLanguageFromURL() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('lang');
@@ -128,6 +128,7 @@ class GemsMines {
     }
 
     initializeGrid() {
+        this.grid.innerHTML = ''; // Clear existing grid
         for (let i = 0; i < 25; i++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
