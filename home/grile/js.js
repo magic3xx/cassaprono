@@ -10,8 +10,6 @@ class GemsMines {
                 back: "Retour",
                 trapCount: pièges => `${pièges} piège${pièges > 1 ? 's' : ''}`,
                 loadingText: "Chargement de Gems Mines...",
-                predictionsStat: "Prédictions",
-                accuracyStat: "Précision",
                 noLang: "Veuillez configurer la langue dans votre bot et réessayer"
             },
             en: {
@@ -22,8 +20,6 @@ class GemsMines {
                 back: "Back",
                 trapCount: traps => `${traps} trap${traps > 1 ? 's' : ''}`,
                 loadingText: "Loading Gems Mines...",
-                predictionsStat: "Predictions",
-                accuracyStat: "Accuracy",
                 noLang: "Please configure the language in your bot and try again"
             },
             ru: {
@@ -34,8 +30,6 @@ class GemsMines {
                 back: "Назад",
                 trapCount: traps => `${traps} ловуш${traps > 1 ? 'ки' : 'ка'}`,
                 loadingText: "Загрузка Gems Mines...",
-                predictionsStat: "Прогнозы",
-                accuracyStat: "Точность",
                 noLang: "Пожалуйста, настройте язык в вашем боте и попробуйте снова"
             },
             ar: {
@@ -46,8 +40,6 @@ class GemsMines {
                 back: "رجوع",
                 trapCount: traps => `${traps} فخ${traps > 1 ? 'وخ' : ''}`,
                 loadingText: "جارٍ تحميل Gems Mines...",
-                predictionsStat: "التوقعات",
-                accuracyStat: "الدقة",
                 noLang: "يرجى تكوين اللغة في البوت الخاص بك وإعادة المحاولة"
             }
         };
@@ -62,10 +54,6 @@ class GemsMines {
         this.initializeElements();
         this.count = 2;
         this.isPredicting = false;
-        this.stats = {
-            predictions: 0,
-            accuracy: 0
-        };
         this.initializeGrid();
         this.bindEvents();
         this.updateLanguage(this.language);
@@ -107,10 +95,8 @@ class GemsMines {
             </svg>
             ${t.back}
         `;
-        document.getElementById('predictionsStat').textContent = t.predictionsStat;
-        document.getElementById('accuracyStat').textContent = t.accuracyStat;
         document.getElementById('loadingText').textContent = t.loadingText;
-        this.updateDisplay(); // Mettre à jour le texte du nombre de pièges
+        this.updateDisplay();
     }
 
     initializeElements() {
@@ -123,8 +109,6 @@ class GemsMines {
         this.preloader = document.getElementById("preloader");
         this.mainContainer = document.getElementById("mainContainer");
         this.backButton = document.getElementById("backButton");
-        this.predictionsCount = document.getElementById("predictions");
-        this.accuracyDisplay = document.getElementById("accuracy");
     }
 
     initializeGrid() {
@@ -185,12 +169,6 @@ class GemsMines {
         this.countDisplay.textContent = t.trapCount(this.count);
         this.increaseBtn.disabled = this.count >= 9;
         this.decreaseBtn.disabled = this.count <= 2;
-        this.updateStats();
-    }
-
-    updateStats() {
-        this.predictionsCount.textContent = this.stats.predictions;
-        this.accuracyDisplay.textContent = `${this.stats.accuracy}%`;
     }
 
     toggleButtons(disabled) {
@@ -253,7 +231,6 @@ class GemsMines {
                         this.isPredicting = false;
                         this.toggleButtons(false);
                         this.predictBtn.classList.remove('loading');
-                        this.stats.predictions++;
                         this.updateDisplay();
                         if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
                     }, 600);
