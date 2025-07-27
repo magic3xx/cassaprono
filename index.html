@@ -79,7 +79,7 @@
         .profile-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 5px;
         }
 
         .profile-btn {
@@ -480,7 +480,146 @@
                 width: 100%;
                 right: -100%;
             }
+             .sidebar {
+                    max-width: 50vw;
+                    max-height: 50vw;
+                }
         }
+
+         @media (max-width: 412px) {
+             .top-nav {
+                padding: 15px 2px;
+            }
+
+            .brand-name {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .games-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .profile-btn {
+                padding: 8px 12px;
+            }
+            .profile-avatar {
+                width: 28px;
+                height: 28px;
+            }
+            .profile-info {
+                display: none;
+            }
+
+            .hamburger-menu {
+                padding: 8px;
+            }
+
+            .hamburger-line {
+                width: 18px;
+                height: 2px;
+            }
+
+            .game-card {
+                height: 250px;
+            }
+
+            .game-image {
+                height: 150px;
+            }
+            .game-info {
+                height: 80px;
+            }
+
+            .play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .loading-spinner {
+                width: 40px;
+                height: 40px;
+            }
+
+            .loading-text {
+                font-size: 14px;
+                max-width: 90%;
+            }
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+            }
+
+            .back-to-top i {
+                font-size: 24px;
+            }
+
+            .sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .sidebar-header {
+                padding: 20px;
+            }
+            .sidebar-title {
+                font-size: 20px;
+            }
+            .close-sidebar {
+                padding: 10px;
+                font-size: 16px;
+            }
+            .sidebar-menu a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            .sidebar-menu a i {
+                font-size: 16px;
+            }
+
+            .sidebar-menu li {
+                margin: 15px 0;
+            }
+            .sidebar-menu {
+                padding: 20px;
+            }
+            .sidebar.active {
+                right: 0;
+            }
+
+            .overlay {
+                backdrop-filter: blur(5px);
+            }
+
+            .overlay.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .loading-overlay {
+                padding: 20px;
+            }
+
+            .sidebar {
+                max-width: 350px;
+            }
+            @media (max-width: 412px) {
+                .sidebar {
+                    max-width: 50vw;
+                    max-height: 50vw;
+                }
+            }
+         }
     </style>
 </head>
 <body class="dark-mode">
