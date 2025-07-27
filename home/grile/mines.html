@@ -178,23 +178,6 @@
             position: relative;
         }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-primary);
-            margin: 0 auto 1.5rem auto;
-            display: block;
-            transition: var(--transition);
-            border: 2px solid var(--glass-border);
-            object-fit: cover;
-        }
-
-        .logo:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: var(--shadow-elevated);
-        }
-
         .title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -219,6 +202,7 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
             gap: 12px;
             margin-bottom: 2rem;
             padding: 1rem;
@@ -271,16 +255,14 @@
 
         @keyframes revealTrap {
             0% {
-                transform: 0;
-                scale: 0.3;
+                transform: scale(0.3);
             }
             25% {
                 transform: scale(1.1) rotate(-5deg);
                 opacity: 0.7;
             }
             50% {
-                transform: scale(1.2);
-                rotate(5deg);
+                transform: scale(1.2) rotate(5deg);
                 opacity: 0.5;
             }
             75% {
@@ -411,7 +393,7 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3));
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
             position: relative;
         }
 
@@ -438,7 +420,7 @@
         }
 
         .btn-secondary:hover:not(:disabled) {
-            background: rgba(255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
@@ -497,17 +479,12 @@
             .container {
                 min-width: unset;
                 width: 95vw;
-                margin: 0;rem;
+                margin: 0.2rem;
                 padding: 1.5rem;
             }
 
             .title {
                 font-size: 2rem;
-            }
-
-            .logo {
-                width: 100px;
-                height: 100px;
             }
 
             .grid {
@@ -563,13 +540,12 @@
 
     <div class="container" id="mainContainer">
         <div class="header">
-            <img src="https://i.ibb.co/20Yygtt/Background-Eraser-20250511-212545994.jpg" alt="Gems Mines Logo" class="logo">
             <h1 class="title" id="title">Gems Mines</h1>
             <p class="subtitle" id="subtitle">Prédicteur de mines professionnel</p>
         </div>
 
         <div class="game-section">
-            <div class="game-grid" id="gameGrid"></div>
+            <div class="grid" id="gameGrid"></div>
         </div>
 
         <div class="controls">
@@ -607,7 +583,8 @@
             Retour
         </button>
     </div>
-    <script src="js.js">      
+    <script src="js.js">
+
     </script>
 </body>
 </html>
