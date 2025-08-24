@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>Lucky Jet Predictor Pro</title>
+    <title id="page-title">Lucky Jet Predictor Pro</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
-
+        
         * {
             margin: 0;
             padding: 0;
@@ -159,6 +159,8 @@
                 rgba(247, 147, 30, 0.05) 50%, 
                 rgba(255, 215, 0, 0.1) 100%);
             backdrop-filter: blur(25px);
+            border: 3px solid;
+            border-image: var(--primary-gradient) 1;
             border-radius: 50%;
             display: flex;
             flex-direction: column;
@@ -235,6 +237,8 @@
                 rgba(255, 107, 53, 0.1) 0%, 
                 rgba(247, 147, 30, 0.1) 100%);
             backdrop-filter: blur(20px);
+            border: 2px solid;
+            border-image: var(--primary-gradient) 1;
             border-radius: 50px;
             padding: 1.2rem 2.5rem;
             font-size: 1.1rem;
@@ -247,7 +251,6 @@
             min-width: 180px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: none;
         }
 
         .btn::before {
@@ -264,6 +267,7 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+            border-image: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%) 1;
         }
 
         .btn:hover::before {
@@ -282,6 +286,7 @@
 
         .btn.secondary {
             background: var(--secondary-gradient);
+            border-image: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%) 1;
         }
 
         .btn:disabled {
@@ -451,85 +456,6 @@
     </div>
 
     <div class="status-bar" id="status-bar"></div>
-
-    <script>
-        // DOM Elements
-        const predictionCircle = document.getElementById('prediction-circle');
-        const predictionValue = document.getElementById('prediction-value');
-        const generateBtn = document.getElementById('generate-btn');
-        const backBtn = document.getElementById('back-btn');
-        const statusBar = document.getElementById('status-bar');
-        const btnText = document.getElementById('btn-text');
-
-        // Generate a random multiplier prediction
-        function generatePrediction() {
-            // Show loading state
-            predictionCircle.classList.add('loading');
-            btnText.innerHTML = 'Calcul en cours<span class="loading-dots"><span></span><span></span><span></span></span>';
-            generateBtn.disabled = true;
-            
-            // Show status message
-            showStatus('Analyse des tendances en cours...');
-            
-            // Simulate prediction calculation
-            setTimeout(() => {
-                // Generate random multiplier between 1.0x and 15.0x
-                const multiplier = (Math.random() * 14 + 1).toFixed(1);
-                
-                // Update display
-                predictionValue.textContent = `${multiplier}x`;
-                
-                // Remove loading state
-                predictionCircle.classList.remove('loading');
-                btnText.textContent = '🚀 Lancer Prédiction';
-                generateBtn.disabled = false;
-                
-                // Show success message based on multiplier value
-                if (multiplier >= 10) {
-                    showStatus('🚀 Multiplicateur élevé détecté! Bonne chance!', 'success');
-                } else if (multiplier >= 5) {
-                    showStatus('👍 Bon multiplicateur! Préparez-vous!', 'success');
-                } else {
-                    showStatus('✅ Prédiction terminée. Soyez prudent!', 'normal');
-                }
-            }, 2000);
-        }
-
-        // Show status message
-        function showStatus(message, type = 'normal') {
-            statusBar.textContent = message;
-            statusBar.classList.add('show');
-            
-            // Remove previous color classes
-            statusBar.classList.remove('success', 'warning', 'danger');
-            
-            // Add color class based on type
-            if (type === 'success') {
-                statusBar.classList.add('success');
-            } else if (type === 'warning') {
-                statusBar.classList.add('warning');
-            } else if (type === 'danger') {
-                statusBar.classList.add('danger');
-            }
-            
-            // Hide status after 3 seconds
-            setTimeout(() => {
-                statusBar.classList.remove('show');
-            }, 3000);
-        }
-
-        // Event Listeners
-        generateBtn.addEventListener('click', generatePrediction);
-        
-        backBtn.addEventListener('click', () => {
-            showStatus('Retour au menu principal...');
-            // Add your back navigation logic here
-        });
-
-        // Initial status message
-        setTimeout(() => {
-            showStatus('Système prêt. Appuyez sur "Lancer Prédiction"!');
-        }, 1000);
-    </script>
+    <script src="js.js"></script>
 </body>
 </html>
